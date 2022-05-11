@@ -1,4 +1,9 @@
 # basketball_language
-This repository contains a python language compiler that will understand basketball play-by-play commands and return stat lines for players included.
+This repository contains a python language compiler that will understand basketball play-by-play commands and return a boxscore for players mentioned in the play-by-play.
 
-To create a command, it must start with a first and last name using capital letters to create a player. It must then be followed by an action (made, missed, steal, block, rebound). In the case that the action was a steal, another name must be provided for who the ball was stolen from (player 1 steals from player 2). The same is true for a block (player 1 blocks player 2). The return will be a final statline for each player name that was included.
+This language runs by reading through a text file of basketball play-by-play commands. To create a command, it must start with a first and last name using capital letters to create a player. It must then be followed by an action (make, miss, steal, block, rebound, assist, turnover or foul). In the case that the action was a make or miss, it must be fouled by the shot that was attempted (Giannis Antetokounmpo misses two pointer). A two pointer, three pointer, or free throw can follow the make or miss command. For a rebound, it must be followed by the category of rebound (Giannis Antetokounmpo rebound defensive). This category can be either defensive or offensive. The return will be a final boxscore using 18 categories that classify the traditional stats in a basketball game. 
+
+The interesting part about this language is that, after cleaning up to data to fit the requirements, this language can produce full and accuarate boxscores for any basketball game that uses play-by-play regardless of the league or country the game will be played in. Further steps could then be taken to produce advanced stats from the boxscore this language produces.
+
+To run this language, use the command: python3 basketball.py (txt file)
+Ex: python3 basketball.py sample1.txt
